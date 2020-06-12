@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 driver = None
 
@@ -7,7 +8,7 @@ driver = None
 def setup_teardown(request):
     global driver
     print('setup method')
-    driver = webdriver.Chrome(executable_path="/home/lpoplavska/Documents/chromedriver")
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     request.cls.driver = driver
     yield
     print('teardown method')
