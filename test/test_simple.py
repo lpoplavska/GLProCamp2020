@@ -1,7 +1,14 @@
 import pytest
 from selenium.webdriver.common.keys import Keys
 
-@pytest.mark.usefixtures('setup_teardown')
+"""
+    Select below the needed fixture depending on the method of searching for webdriver file 
+    and uncomment the non-relevant fixtures
+"""
+#@pytest.mark.usefixtures('setup_teardown')
+#@pytest.mark.usefixtures('setup_teardown_local')
+#@pytest.mark.usefixtures('setup_teardown_wd_manager')
+@pytest.mark.usefixtures('setup_teardown_selenium_server')
 class TestSimple:
 
     def test_simple1(self):
